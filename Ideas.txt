@@ -1,5 +1,5 @@
 Szente's Ideas:
-    1.: A clicker based game with account login.
+  #  1.: A clicker based game with account login.
 
     2.: "Webshop" with login and saved cerdentials.
 
@@ -7,6 +7,6 @@ Szente's Ideas:
 
 
 Csuzma's Ideas(if they exist):
-    1.: ...
+    1.: Hotel check in system with calendar.
 
-    2.: ...
+    2.: Ticket seller website. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<3csongibebi
