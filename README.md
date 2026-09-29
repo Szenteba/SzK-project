@@ -29,4 +29,4 @@ Szente: Created the base for Frontend (html/css/js)
 
 ## ------------------------------ 2026.09.29 ------------------------------ ##
 -- Legit Nothing
-
+-- Starting point: 'Idk'
