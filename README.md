@@ -1,32 +1,53 @@
-# SzK-project
-ZSZC Ganz Ábrahám Technikum 2026/27 tanév 13.A Projetkmunka
+# Autket (SzK-project)
 
-##### .
-#### .
-### .
-###
+ZSZC Ganz Ábrahám Technikum — 2026/27 tanév, 13.A projektmunka
 
-## ------------------------------ 2026.09.24 ------------------------------ ##
-### -------------------------------- Project Created ------------------------------- ###
-Szente: Ideas.txt added for ideas (WOW)
-Szente: Edited Ideas.txt
-Csongor: Editied Ideas.txt
+**Autket** egy jegyaukciós weboldal. A vevő élő aukciókat böngészhet és szűrhet; az eladó a saját jegyfelületét használja. A szerepkör a bejelentkezett fiók típusától függ.
 
--- Descided the project theme
+Csapat: **Szente**, **Csongor** (Csuzma)
 
-## ------------------------------ 2026.09.25 ------------------------------ ##
--- Legit Nothing
+## Futtatás
 
-## ------------------------------ 2026.09.26 ------------------------------ ##
--- Legit Nothing
+Nyisd meg a `Front End/index.html` fájlt böngészőben. Backend / adatbázis még nincs.
 
-## ------------------------------ 2026.09.27 ------------------------------ ##
--- Legit Nothing
+## Struktúra
 
-## ------------------------------ 2026.09.28 ------------------------------ ##
-### -------------------------------- Project Base ------------------------------- ###
-Szente: Created the base for Frontend (html/css/js)
+```
+Front End/
+  index.html    — fejléc (márka, vevő/eladó, beállítások, belépés), jegylista, szűrők
+  style.css     — sötét téma, arany/kék kiemelés
+  script.js     — navigációs panelek, belépő űrlap (egyelőre nem küld adatot)
+Ideas.txt       — témaválasztás
+HTML terv.png   — HTML elrendezési terv
+```
 
-## ------------------------------ 2026.09.29 ------------------------------ ##
--- Legit Nothing
--- Starting point: 'Idk'
+Jelenlegi UI: ticket kártyák, kategória / helyszín / max. licit / állapot szűrők, beállítások (nyelv, értesítések, élő licit), bejelentkezés / regisztráció űrlap.
+
+## Munkanapló
+
+### 2026.09.24 — Projekt indítás
+
+- Szente: `Ideas.txt` létrehozva és szerkesztve
+- Csongor: `Ideas.txt` szerkesztve
+- Téma: **jegyes weboldal** (Csuzma 2. ötlete)
+
+### 2026.09.28 — Frontend alap
+
+- Szente: frontend alap (`html` / `css` / `js`)
+
+### 2026.10.02 — Elrendezés
+
+- Szente, Csongor: HTML terv (`HTML terv.png`)
+
+### 2026.10.05 — Autket felület
+
+- Fejléc: AUTKET márka, vevő / eladó kapcsoló, beállítások, bejelentkezés
+- Főnézet: jegylista + szűrőpanel (kategória, helyszín, max. licit, állapot)
+- Sötét stílus és alap JS a panelekhez
+
+### 2026.10.08 - Tanulási Folyamatok
+
+- Szente, Csongor: A projekthez szükséges alaptudás megszerzése.
+- Az adatbázishoz "teszt projekt" és Demo készítése.
+- Egy Demo oldal létrehozása és az adatbázisból való lehívás.
+

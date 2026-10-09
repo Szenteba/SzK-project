@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autket — Jegyaukció</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #07080d;
+            --bg-elev: #10131c;
+            --bg-card: #161b27;
+            --line: rgba(255, 255, 255, 0.08);
+            --text: #f4f6fb;
+            --muted: #9aa3b8;
+            --gold: #f5c518;
+            --gold-dim: rgba(245, 197, 24, 0.14);
+            --live: #3ee0a2;
+            --hot: #ff5c7a;
+            --radius: 18px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Outfit, system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background:
+                radial-gradient(900px 420px at 10% -10%, rgba(245, 197, 24, 0.12), transparent 55%),
+                radial-gradient(700px 380px at 100% 0%, rgba(80, 110, 255, 0.16), transparent 50%),
+                var(--bg);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 28px;
+            border-bottom: 1px solid var(--line);
+            background: rgba(7, 8, 13, 0.72);
+            backdrop-filter: blur(16px);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            font-size: 1.15rem;
+        }
+
+        .brand-mark {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--gold), #ff8a3d);
+            color: #151515;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+        }
+
+        .nav-search {
+            flex: 1;
+            max-width: 420px;
+        }
+
+        .nav-search input {
+            width: 100%;
+            border: 1px solid var(--line);
+            background: var(--bg-elev);
+            color: var(--text);
+            border-radius: 999px;
+            padding: 10px 16px;
+            font: inherit;
+            outline: none;
+        }
+
+        .nav-search input:focus {
+            border-color: rgba(245, 197, 24, 0.55);
+        }
+
+        .menu-btn {
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--line);
+            background: var(--bg-elev);
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .menu-btn span {
+            display: block;
+            width: 18px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+            min-height: 0;
+        }
+
+        aside {
+            width: 280px;
+            flex-shrink: 0;
+            padding: 24px 20px;
+            border-right: 1px solid var(--line);
+        }
+
+        .filter-box {
+            background: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 20px;
+            position: sticky;
+            top: 92px;
+        }
+
+        .filter-box h2 {
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+        }
+
+        .filter-group {
+            margin-bottom: 18px;
+        }
+
+        .filter-group label {
+            display: block;
+            color: var(--muted);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            width: 100%;
+            border: 1px solid var(--line);
+            background: var(--bg-elev);
+            color: var(--text);
+            border-radius: 12px;
+            padding: 10px 12px;
+            font: inherit;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .chip {
+            border: 1px solid var(--line);
+            background: transparent;
+            color: var(--muted);
+            border-radius: 999px;
+            padding: 6px 10px;
+            font: inherit;
+            font-size: 0.82rem;
+            cursor: pointer;
+        }
+
+        .chip.active {
+            background: var(--gold-dim);
+            color: var(--gold);
+            border-color: rgba(245, 197, 24, 0.35);
+        }
+
+        main {
+            flex: 1;
+            padding: 24px 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .list-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 4px;
+        }
+
+        .list-head h1 {
+            font-size: 1.45rem;
+        }
+
+        .list-head p {
+            color: var(--muted);
+            font-size: 0.92rem;
+            margin-top: 4px;
+        }
+
+        ticket {
+            display: grid;
+            grid-template-columns: 88px 1fr auto;
+            gap: 18px;
+            align-items: center;
+            background: linear-gradient(180deg, #1a2030, var(--bg-card));
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 16px 18px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+        }
+
+        ticket::before,
+        ticket::after {
+            content: "";
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            background: var(--bg);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        ticket::before { left: -11px; }
+        ticket::after { right: -11px; }
+
+        .date-stub {
+            text-align: center;
+            border-right: 1px dashed rgba(255, 255, 255, 0.16);
+            padding-right: 14px;
+        }
+
+        .date-stub .month {
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+        }
+
+        .date-stub .day {
+            font-size: 1.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .ticket-body h3 {
+            font-size: 1.12rem;
+            margin-bottom: 4px;
+        }
+
+        .ticket-body p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .meta {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .pill {
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 999px;
+            padding: 4px 8px;
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--muted);
+        }
+
+        .pill.live {
+            color: var(--live);
+            background: rgba(62, 224, 162, 0.12);
+        }
+
+        .pill.hot {
+            color: var(--hot);
+            background: rgba(255, 92, 122, 0.12);
+        }
+
+        .bid {
+            text-align: right;
+            min-width: 150px;
+        }
+
+        .bid small {
+            display: block;
+            color: var(--muted);
+            font-size: 0.75rem;
+            margin-bottom: 2px;
+        }
+
+        .bid strong {
+            display: block;
+            font-size: 1.25rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .bid button {
+            border: 0;
+            background: var(--gold);
+            color: #171717;
+            font: inherit;
+            font-weight: 700;
+            border-radius: 12px;
+            padding: 9px 14px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 860px) {
+            .content { flex-direction: column; }
+            aside {
+                width: 100%;
+                border-right: 0;
+                border-bottom: 1px solid var(--line);
+            }
+            .filter-box { position: static; }
+            .nav-search { display: none; }
+            ticket {
+                grid-template-columns: 72px 1fr;
+            }
+            .bid {
+                grid-column: 1 / -1;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+                border-top: 1px dashed rgba(255, 255, 255, 0.14);
+                padding-top: 12px;
+            }
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .copyright {
+                white-space: normal;
+            }
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 24px;
+            padding: 28px;
+            border-top: 1px solid var(--line);
+            background: rgba(7, 8, 13, 0.88);
+            color: var(--muted);
+        }
+
+        .about h2 {
+            color: var(--text);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .about p {
+            max-width: 520px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <nav>
+            <div class="brand">
+                <span class="brand-mark">A</span>
+                AUTKET
+            </div>
+            <form class="nav-search" role="search">
+                <input type="search" placeholder="Keresés: koncert, sport, fesztivál…">
+            </form>
+            <button class="menu-btn" type="button" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        <div class="content">
+            <aside>
+                <div class="filter-box">
+                    <h2>Szűrő</h2>
+                    <div class="filter-group">
+                        <label>Kategória</label>
+                        <div class="chips">
+                            <button class="chip active" type="button">Összes</button>
+                            <button class="chip" type="button">Koncert</button>
+                            <button class="chip" type="button">Sport</button>
+                            <button class="chip" type="button">Fesztivál</button>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Helyszín</label>
+                        <select>
+                            <option>Budapest</option>
+                            <option>Debrecen</option>
+                            <option>Szeged</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Max. licit</label>
+                        <input type="range" min="5000" max="150000" value="80000">
+                    </div>
+                    <div class="filter-group">
+                        <label>Állapot</label>
+                        <select>
+                            <option>Élő aukciók</option>
+                            <option>Hamarosan lejár</option>
+                            <option>Közelgő</option>
+                        </select>
+                    </div>
+                </div>
+            </aside>
+            <main>
+                <div class="list-head">
+                    <div>
+                        <h1>Tickets</h1>
+                        <p>Élő jegyaukciók — licitálj, mielőtt lejár az idő.</p>
+                    </div>
+                </div>
+                <ticket>
+                    <div class="date-stub">
+                        <div class="month">OKT</div>
+                        <div class="day">18</div>
+                    </div>
+                    <div class="ticket-body">
+                        <h3>Coldplay — Music of the Spheres</h3>
+                        <p>Puskás Aréna · Budapest</p>
+                        <div class="meta">
+                            <span class="pill live">Élő</span>
+                            <span class="pill">12:41 van hátra</span>
+                        </div>
+                    </div>
+                    <div class="bid">
+                        <small>Jelenlegi licit</small>
+                        <strong>86 599 Ft</strong>
+                        <button type="button">Licitálok</button>
+                    </div>
+                </ticket>
+                <ticket>
+                    <div class="date-stub">
+                        <div class="month">NOV</div>
+                        <div class="day">02</div>
+                    </div>
+                    <div class="ticket-body">
+                        <h3>FTC — Újpest, OTP Bank Liga</h3>
+                        <p>Groupama Aréna · Budapest</p>
+                        <div class="meta">
+                            <span class="pill hot">Hamarosan lejár</span>
+                            <span class="pill">04:08 van hátra</span>
+                        </div>
+                    </div>
+                    <div class="bid">
+                        <small>Jelenlegi licit</small>
+                        <strong>24 999 Ft</strong>
+                        <button type="button">Licitálok</button>
+                    </div>
+                </ticket>
+                <ticket>
+                    <div class="date-stub">
+                        <div class="month">AUG</div>
+                        <div class="day">06</div>
+                    </div>
+                    <div class="ticket-body">
+                        <h3>Sziget Festival 2027 — 3 napos bérlet</h3>
+                        <p>Óbudai-sziget · Budapest</p>
+                        <div class="meta">
+                            <span class="pill live">Élő</span>
+                            <span class="pill">1 nap 3 óra</span>
+                        </div>
+                    </div>
+                    <div class="bid">
+                        <small>Jelenlegi licit</small>
+                        <strong>119 999 Ft</strong>
+                        <button type="button">Licitálok</button>
+                    </div>
+                </ticket>
+                <ticket>
+                    <div class="date-stub">
+                        <div class="month">DEC</div>
+                        <div class="day">12</div>
+                    </div>
+                    <div class="ticket-body">
+                        <h3>Hans Zimmer Live</h3>
+                        <p>MVM Dome · Budapest</p>
+                        <div class="meta">
+                            <span class="pill live">Élő</span>
+                            <span class="pill">22:15 van hátra</span>
+                        </div>
+                    </div>
+                    <div class="bid">
+                        <small>Jelenlegi licit</small>
+                        <strong>67 299 Ft</strong>
+                        <button type="button">Licitálok</button>
+                    </div>
+                </ticket>
+                <ticket>
+                    <div class="date-stub">
+                        <div class="month">JÚL</div>
+                        <div class="day">26</div>
+                    </div>
+                    <div class="ticket-body">
+                        <h3>Formula 1 Magyar Nagydíj</h3>
+                        <p>Hungaroring · Mogyoród</p>
+                        <div class="meta">
+                            <span class="pill">Közelgő</span>
+                            <span class="pill">VIP tribün</span>
+                        </div>
+                    </div>
+                    <div class="bid">
+                        <small>Kezdő licit</small>
+                        <strong>145 999 Ft</strong>
+                        <button type="button">Licitálok</button>
+                    </div>
+                </ticket>
+            </main>
+        </div>
+        <footer>
+            <div class="about">
+                <h2>About</h2>
+                <p>Az Autket élő jegyaukciók platformja. Koncertekre, sportra és fesztiválokra licitálhatsz, mielőtt lejár az idő.</p>
+            </div>
+            <p class="copyright">© 2026 Autket. Minden jog fenntartva.</p>
+        </footer>
+    </div>
+    <script>
+        document.querySelectorAll(".chip").forEach((chip) => {
+            chip.addEventListener("click", () => {
+                chip.parentElement.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
+                chip.classList.add("active");
+            });
+        });
+    </script>
+</body>
+</html>

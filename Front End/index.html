@@ -4,23 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autket</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Autket</h1>
+    <div id="header">
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+            <a class="brand" href="#">
+                <span class="brand-mark">A</span>
+                AUTKET
+            </a>
+
+            <div class="role-switch" role="radiogroup" aria-label="Szerepkör">
+                <label class="role-option">
+                    <input type="radio" name="role" id="role-buyer" checked>
+                    Vevő
+                </label>
+                <label class="role-option">
+                    <input type="radio" name="role" id="role-seller">
+                    Eladó
+                </label>
+            </div>
+
+            <div class="nav-actions">
+                <details class="nav-panel">
+                    <summary>Beállítások</summary>
+                    <div class="panel-card">
+                        <p class="panel-title">Beállítások</p>
+                        <label class="setting-row">
+                            Nyelv
+                            <select>
+                                <option>Magyar</option>
+                                <option>English</option>
+                            </select>
+                        </label>
+                        <label class="setting-row">
+                            Értesítések
+                            <input type="checkbox" checked>
+                        </label>
+                        <label class="setting-row">
+                            Élő licit figyelés
+                            <input type="checkbox" checked>
+                        </label>
+                    </div>
+                </details>
+
+                <details class="nav-panel">
+                    <summary>Bejelentkezés</summary>
+                    <div class="panel-card auth-card">
+                        <div class="auth-tabs">
+                            <label class="auth-tab">
+                                <input type="radio" name="auth-mode" checked>
+                                Bejelentkezés
+                            </label>
+                            <label class="auth-tab">
+                                <input type="radio" name="auth-mode">
+                                Regisztráció
+                            </label>
+                        </div>
+                        <form class="auth-form" action="#" method="post">
+                            <input type="email" name="email" placeholder="E-mail" required>
+                            <input type="password" name="password" placeholder="Jelszó" required>
+                            <input class="signup-only" type="password" name="password2" placeholder="Jelszó újra">
+                            <button type="submit">Tovább</button>
+                        </form>
+                    </div>
+                </details>
+            </div>
         </nav>
-    </header>
-    <main>
-        <h2>Welcome to Autket</h2>
-    </main>
-    <footer>
-        <p>Copyright 2026 Autket</p>
-    </footer>
+    </div>
+    <div id="main">
+        <div class="vevofelulet">
+            <div id="ticket-container">
+                <ticket>
+                    <h1>Ticket 1</h1>
+                    <p>Ticket 1 description</p>
+                    <ar>1000</ar>
+                </ticket>
+                <ticket>
+                    <h1>Ticket 2</h1>
+                    <p>Ticket 2 description</p>
+                    <ar>1500</ar>   
+                </ticket>
+                <ticket>
+                    <h1>Ticket 3</h1>
+                    <p>Ticket 3 description</p>
+                    <ar>2000</ar>
+                </ticket>
+                <ticket>
+                    <h1>Ticket 3</h1>
+                    <p>Ticket 3 description</p>
+                    <ar>2000</ar>
+                </ticket>
+                <ticket>
+                    <h1>Ticket 3</h1>
+                    <p>Ticket 3 description</p>
+                    <ar>2000</ar>
+                </ticket>
+                <ticket>
+                    <h1>Ticket 3</h1>
+                    <p>Ticket 3 description</p>
+                    <ar>2000</ar>
+                </ticket>
+                <ticket>
+                    <h1>Ticket 3</h1>
+                    <p>Ticket 3 description</p>
+                    <ar>2000</ar>
+                </ticket>
+            </div>
+            <div id="filter-container">
+                <filter>
+                    <h1>Szűrő</h1>
+                    <p>Kategória</p>
+                    <div class="chips">
+                        <label class="chip"><input type="radio" name="kategoria" checked> Összes</label>
+                        <label class="chip"><input type="radio" name="kategoria"> Koncert</label>
+                        <label class="chip"><input type="radio" name="kategoria"> Sport</label>
+                        <label class="chip"><input type="radio" name="kategoria"> Fesztivál</label>
+                    </div>
+                    <p>Helyszín</p>
+                    <select>
+                        <option>Budapest</option>
+                        <option>Debrecen</option>
+                        <option>Szeged</option>
+                    </select>
+                    <p>Max. licit</p>
+                    <input type="range" min="5000" max="150000" value="80000">
+                    <p>Állapot</p>
+                    <select>
+                        <option>Élő aukciók</option>
+                        <option>Hamarosan lejár</option>
+                        <option>Közelgő</option>
+                    </select>
+                </filter>
+            </div>
+        </div>
+        <div class="eladofelulet">
+
+
+        </div>
+    </div>
+    <div id="footer">
+        
+    </div>
 </body>
+<script src="script.js"></script>
 </html>
