@@ -51,3 +51,8 @@ Jelenlegi UI: ticket kártyák, kategória / helyszín / max. licit / állapot s
 - Az adatbázishoz "teszt projekt" és Demo készítése.
 - Egy Demo oldal létrehozása és az adatbázisból való lehívás.
 
+### 2026.10.09 - Tanulási Folyamatok
+
+- Csongor: Node telepítése
+- `serever.js`, `package.json` hozzáadva és a node server felállítása.
+- Alap test package létrehozva és a demo sikeres.
