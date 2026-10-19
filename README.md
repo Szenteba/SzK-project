@@ -48,7 +48,7 @@ Jelenlegi UI: ticket kártyák, kategória / helyszín / max. licit / állapot s
 ### 2026.10.08 - Tanulási Folyamatok
 
 - Szente, Csongor: A projekthez szükséges alaptudás megszerzése.
-- Az adatbázishoz "teszt projekt" és Demo készítése.
+- Az adatbázishoz "teszt projekt" és Demo készítése.  
 - Egy Demo oldal létrehozása és az adatbázisból való lehívás.
 
 ### 2026.10.09 - Tanulási Folyamatok
