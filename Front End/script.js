@@ -1,14 +1,18 @@
-document.querySelectorAll(".nav-panel").forEach((panel) => {
-    panel.addEventListener("toggle", () => {
-        if (!panel.open) return;
-        document.querySelectorAll(".nav-panel").forEach((other) => {
-            if (other !== panel) other.removeAttribute("open");
-        });
-    });
-});
+const autketgomb= document.getElementById('autketgomb');
+autketgomb.addEventListener('click', () => {
+    alert("hello")
+})
+const settingsgomb = document.getElementById('settingsgomb');
+settingsgomb.addEventListener('click', () => {
+    alert("helllo")
+})
+const licitgomb = document.getElementById('licitgomb');
+licitgomb.addEventListener('click', () => {
+    alert("hellllo")
+})
 
-document.querySelectorAll(".auth-form").forEach((form) => {
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
-    });
+window.addEventListener('load', () => {
+    console.log('Page loaded');
+    const main = document.getElementById('ticket').children[0];
+    main.style.display = 'none';
 });

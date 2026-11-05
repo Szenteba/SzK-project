@@ -49,8 +49,13 @@ li button{
     cursor: pointer;
 }
 
+li.ticket ul{
+    display: inline-block;
+}
+
 li.ticket ul ar{
     display: inline-block;
+    
 }
 
 li.ticket ul date{

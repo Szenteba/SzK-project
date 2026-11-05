@@ -15,7 +15,7 @@ Vevő Licitálhat fix, előre megadott áron.
 ### Eladó Belép:
 
 
-Eladó Látja a saját jegyeit.
+Eladó Szűri a saját jegyeit.
 
 Eladó Feltölhet jegyet.
 

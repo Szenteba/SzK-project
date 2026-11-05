@@ -9,31 +9,40 @@
     <div class="header">
         <h1>Autokett</h1>
         <nav>
-            <button class="autketgomb">A</button>
+            <button class="autketgomb" id="autketgomb">A</button>
             <input type="text" placeholder="Keresés" class="kereses">
-            <button class="settingsgomb">☰</button>
+            <button class="settingsgomb" id="settingsgomb">☰</button>
         </nav>
     </div>
     <div class="main">
         <div class="ticket-container">
-            <li class="ticket">
+            <li class="ticket" id="ticket">
                 <ul>
                     <nev>Ticket 1</nev>
-                    <button>Licit</button>
+                    <button id="licitgomb">Licit</button>
                     <ar>ar</ar>
                     <date>date</date>
                     <helyszin>helyszin</helyszin>
                 </ul>
-
-
             </li>
         </div>
         <div class="filter-container">
-            filter
+            <p>Szűrő</p>
+            <p>Kategória:</p>
+            <button checked>Összes</button>
+            <button unchecked>Szórakozás</button>
+            <button unchecked>Sport</button>
+            <button unchecked>Kirándulás</button>
+            <button unchecked>Koncert</button>
         </div>
     </div>
     <div class="footer"> 
-        copyright
+        <p>
+        Rólunk
+        . 
+        Elérhetőségeink
+        . 
+        </p>
     </div>
     <script src="script.js"></script>
 </body>
