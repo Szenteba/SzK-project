@@ -1,6 +1,6 @@
 # Autket (SzK-project)
 
-ZSZC Ganz Ábrahám Technikum — 2026/27 tanév, 13.A projektmunka
+ZSZC Ganz Ábrahám Technikum — 2026/27 tanév, 13.A-ból Kuzma Csongor és Szente Balázs Projektje.
 
 **Autket** egy jegyaukciós weboldal. A vevő élő aukciókat böngészhet és szűrhet; az eladó a saját jegyfelületét használja. A szerepkör a bejelentkezett fiók típusától függ.
 
