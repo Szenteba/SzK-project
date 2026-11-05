@@ -173,7 +173,7 @@ nav {
 }
 
 .auth-tabs {
-    display: grid;
+    display: grid;zukléhjkio9
     grid-template-columns: 1fr 1fr;
     gap: 6px;
     margin-bottom: 12px;
