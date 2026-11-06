@@ -2,17 +2,15 @@ Bejelentkezési oldal.
 User vagy Seller belépés.
 
 
-### Vevő Belép:
+### Vevő felület:
 
-
-Vevő Látja az összes jegyet lejárati dátum szerint rendezve.
 
 Vevő szűrhet jegyre: Helyszín, Időpont, Jelenlegi ár, Név alapján.
 
 Vevő Licitálhat fix, előre megadott áron.
 
 
-### Eladó Belép:
+### Eladó felület:
 
 
 Eladó Szűri a saját jegyeit.
