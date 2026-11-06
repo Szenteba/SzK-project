@@ -1,56 +1,30 @@
-Bejelentkezési oldal.
-User vagy Seller felhasználói profil.
+## Regisztrációs és Bejelentkezési folyamatok
 
-### Felhasználó belépett:
+### Regisztráció: 
+A látogató kiválasztja a felhasználói típust (Vevő vagy Eladó), megadja az azonosítóit, pénzügyi adatait és elérhetőségeit. A rendszer elmenti az adatokat, és létrehozza az új felhasználói fiókot.
 
+### Bejelentkezés: 
+A felhasználó megadja a hitelesítő adatait. A rendszer ellenőrzi a jogosultságot, majd a szerepkörnek megfelelő kezdőfelületet (Vevő vagy Eladó oldal) jeleníti meg.
 
-Kezdő felület: Vevő felület.
+## Vevői (User) cselekvések
+### Szűrés: 
+A vevő megadja a keresési szempontokat (helyszín, időpont, ár, név). A rendszer leszűkíti a jegyek listáját, és megjeleníti a találatokat.
+### Vásárlás/Licit: 
+A vevő kiválaszt egy jegyet, és kezdeményezi a licitálást vagy a fix áras vásárlást. A rendszer rögzíti a tranzakciót és módosítja a jegy státuszát.
 
+## Eladói (Seller) cselekvések
+### Jegyfeltöltés: 
+Az eladó rögzíti az eladni kívánt jegy adatait. A rendszer elérhetővé teszi a jegyet a piactéren.
+### Keresés a saját kínálatban: 
+Az eladó keresési paramétereket állít be. A rendszer a saját jegyei közül listázza a találatokat.
+### Módosítás/Törlés: 
+Az eladó parancsot ad egy jegy módosítására vagy törlésére. A rendszer frissíti vagy eltávolítja a tétel adatait az adatbázisból.
 
-### Vevő felület:
+## Adminisztrátori cselekvések
+### Tartalomkezelés: 
+Az admin parancsot ad egy jegy törlésére vagy szerkesztésére. A rendszer azonnal végrehajtja a módosítást az aktív kínálatban.
 
-
-Vevő szűrhet jegyre: Helyszín, Időpont, Jelenlegi ár, Név alapján.
-
-Vevő Licitálhat fix, előre megadott áron.
-
-
-### Eladó felület:
-
-
-Eladó Szűri a saját jegyeit.
-
-Eladó Feltölhet jegyet.
-
-Eladó Törölheti saját jegyeit.
-
-Eladó Szerkesztheti saját jegyeit
-
-
-
-### Szürö egység:
-
-
-Felhasználó szűr, jegyek fel lesznek sorolva.
-
-
-
-### Regisztráció:
-
-Felhasználó Típusának kiválasztása: user/seller
-
-Felhasználói adatok (nev,email,jelszo) és banki adatok megadása(számlaszám/kártya adatok).
-
-Felhasználó egyéb elérhetőségei: telefonszám, Social Media platformok.
-
-
-### Admin:
-
-
-Admin felület betölt.
-
-Jegyek törlése, szerkesztése.
-
-Felhasználók törlése, szerkesztése, felfüggesztése.
-
-Feltöltés, vétel, és törlési előzmények jegyek és felhasználókra egyaránt.
+### Felhasználókezelés: 
+Az admin szerkeszti, törli vagy felfüggeszti egy felhasználó profilját. A rendszer érvényesíti a státuszváltást, adott esetben korlátozza a hozzáférést.
+### Naplózás: 
+Az admin lekérdezi a tranzakciós előzményeket (feltöltések, vételek, törlések). A rendszer előkeresi és listázza az érintett felhasználók és jegyek összesített eseménytörténetét.
