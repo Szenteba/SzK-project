@@ -1,5 +1,10 @@
 Bejelentkezési oldal.
-User vagy Seller belépés.
+User vagy Seller felhasználói profil.
+
+### Felhasználó belépett:
+
+
+Kezdő felület: Vevő felület.
 
 
 ### Vevő felület:
@@ -26,19 +31,11 @@ Eladó Szerkesztheti saját jegyeit
 ### Szürö egység:
 
 
-Felhasználó szűrhet Helyre.
-
-Felhasználó szűrhet Névre.
-
-Felhasználó szűrhet Aktuális Árra.
-
-Felhasználó szűrhet Időpontra.
-
-Felhasználó szűrhet Lejárati időre.
+Felhasználó szűr, jegyek fel lesznek sorolva.
 
 
 
-### Regisztráció
+### Regisztráció:
 
 Felhasználó Típusának kiválasztása: user/seller
 
@@ -46,3 +43,14 @@ Felhasználói adatok (nev,email,jelszo) és banki adatok megadása(számlaszám
 
 Felhasználó egyéb elérhetőségei: telefonszám, Social Media platformok.
 
+
+### Admin:
+
+
+Admin felület betölt.
+
+Jegyek törlése, szerkesztése.
+
+Felhasználók törlése, szerkesztése, felfüggesztése.
+
+Feltöltés, vétel, és törlési előzmények jegyek és felhasználókra egyaránt.
