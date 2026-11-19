@@ -1,5 +1,7 @@
 import { userServices } from '../Services/user_services.js';
 
 export const userController = {
-    //a
+    getTicket: (req, res) => {
+        userServices.getTicket(req, res);
+    }
 }

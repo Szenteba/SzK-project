@@ -10,5 +10,13 @@ export const db = mysql.createPool({
 
 
 export const userRepository = {
-
+    getTicket: async (res) => {
+        try {
+            const [rows] = await db.query('SELECT * FROM Ticket');
+            res.json(rows);
+        } catch (error) {
+            console.error('Error fetching ticket:', error);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
+    }
 }
