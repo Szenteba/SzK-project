@@ -5,8 +5,9 @@ autketgomb.addEventListener('click', () => {
 const settingsgomb = document.getElementById('settingsgomb');
 const tabla = document.getElementById('ticket');
 settingsgomb.addEventListener('click', async () => {
+    console.log("Get Ticket kérés")
     try {
-        const response = await fetch('http://localhost:3000/getTicket', {
+        const response = await fetch('http://195.199.213.243:3022/getTicket', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

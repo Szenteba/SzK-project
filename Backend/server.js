@@ -17,8 +17,8 @@ app.get('/semmi', (req, res) => {
     res.json(mockUser);
 });
 
-app.get('/getTicket', userController.getTicket);
+app.get('/getTicket', userController.getTicket, console.log("/getTicket kérése"));
 
 app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+    console.log('Server is running on port 3000 Forwarded to 3022');
 });
