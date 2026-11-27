@@ -7,7 +7,8 @@ const tabla = document.getElementById('ticket');
 settingsgomb.addEventListener('click', async () => {
     console.log("Get Ticket kérés")
     try {
-        const response = await fetch('http://195.199.213.243:3022/getTicket', {
+        console.log("Get Ticket kérése");
+        const response = await fetch('http://localhost:3000/getTicket', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -19,8 +20,7 @@ settingsgomb.addEventListener('click', async () => {
         tabla.innerHTML += `<ul>
                     <nev>${ticket[0].nev}</nev>
                     <leiras>${ticket[0].leiras}</leiras>
-                    
-                    <button id="licitgomb">Licit</button>
+                    <button id="${ticket[0].id}">Licit</button>
                     <ar>${ticket[0].ar}</ar>
                     <date>${ticket[0].lejarat}</date>
                     <helyszin>${ticket[0].helyszin}</helyszin>
